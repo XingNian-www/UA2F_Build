@@ -15,22 +15,22 @@ git clone https://github.com/openwrt/packages
 rm -rf package/libs/libnetfilter-queue
 cp -rf packages/libs/libnetfilter-queue package/libs/
 
-# 追加内核设置
-echo "CONFIG_IP_SET=y
-CONFIG_IP_SET_HASH_IPPORT=y
-CONFIG_IP_SET_MAX=256
-CONFIG_NETFILTER=y
-CONFIG_NETFILTER_FAMILY_ARP=y
-CONFIG_NETFILTER_FAMILY_BRIDGE=y
-CONFIG_NETFILTER_NETLINK=y
-CONFIG_NETFILTER_NETLINK_GLUE_CT=y
-CONFIG_NETFILTER_NETLINK_LOG=y
-CONFIG_NETFILTER_XTABLES=y
-CONFIG_NFT_REJECT=m
-CONFIG_NFT_REJECT_IPV4=m
-CONFIG_NF_CONNTRACK=y
-CONFIG_NF_CONNTRACK_LABELS=y
-CONFIG_NF_CT_NETLINK=y
-CONFIG_NF_DEFRAG_IPV4=y
-CONFIG_NF_REJECT_IPV4=m
-CONFIG_NF_TABLES=y" >> target/linux/x86/config-5.4
+# 修改内核设置,不直接全部修改原因是看起来不舒服
+echo "CONFIG_IP_SET=y" >> target/linux/x86/config-5.4
+echo "CONFIG_IP_SET_HASH_IPPORT=y" >> target/linux/x86/config-5.4
+echo "CONFIG_IP_SET_MAX=256" >> target/linux/x86/config-5.4
+echo "CONFIG_NETFILTER=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NETFILTER_FAMILY_ARP=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NETFILTER_FAMILY_BRIDGE=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NETFILTER_NETLINK=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NETFILTER_NETLINK_GLUE_CT=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NETFILTER_NETLINK_LOG=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NETFILTER_XTABLES=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NFT_REJECT=m" >> target/linux/x86/config-5.4
+echo "CONFIG_NFT_REJECT_IPV4=m" >> target/linux/x86/config-5.4
+echo "CONFIG_NF_CONNTRACK=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NF_CONNTRACK_LABELS=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NF_CT_NETLINK=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NF_DEFRAG_IPV4=y" >> target/linux/x86/config-5.4
+echo "CONFIG_NF_REJECT_IPV4=m" >> target/linux/x86/config-5.4
+echo "CONFIG_NF_TABLES=y" >> target/linux/x86/config-5.4
